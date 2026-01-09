@@ -1,6 +1,6 @@
-## Portfolio Management app
+# Portfolio Management app
 
-### Description
+## Description
 
 The demo is an application that provides various tools for a Portfolio
 manager
@@ -8,28 +8,19 @@ manager
 It deploys the following components:
 
 - Serverless workspace and metastore
-
 - Unity Catalog
-
 - Lakeflow job (creates tables, volume, functions)
-
 - Lakeflow pipeline (Streaming table and Materialized view)
-
 - Marketplace integration
-
 - AI/BI (Dashboard and Genie)
-
 - Agent Bricks Knowledge Assistant
-
 - Agent Bricks Multi-Agent Supervisor
-
 - Databricks Apps
-
 - Lakebase
 
 ![](./readme_images/image13.png)
 
-### App screenshot:
+## App screenshot:
 
 ![](./readme_images/image6.png)
 
@@ -43,24 +34,22 @@ It deploys the following components:
 
 ![](./readme_images/image12.png)
 
-### Requirements
+## Requirements
 
 - Terraform, Databricks CLI, JQ
-
 - Databricks account admin
 
-### Variables settings
+## Variables settings
 
 1.  For the workspace creation, update the variables in the terraform.tfvars file\
     ( terraform/account/terraform.tfvars )
 
 2.  For the application, update the variables in the databricks.yml file\
     (dabs/databricks.yml)\
-
     You only need to update the default value for the profile, email, catalog, schema.\
     Leave the other values as is.
 
-### Installation
+## Installation
 
 Some components do not have APIs yet. Some manual steps, described
 below, are required.
@@ -76,11 +65,9 @@ below, are required.
     ACTION REQUIRED: manually create the marketplace tables called \'news\' from the UI\
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
 
-- In the Databricks UI, click on Marketplace
-
-- In the search box, type 'BBC/Google/CNN/Reuters News listing'
-
-- Click 'Get instant access'
+    - In the Databricks UI, click on Marketplace
+    - In the search box, type 'BBC/Google/CNN/Reuters News listing'
+    - Click 'Get instant access'
 
 ![](./readme_images/image11.png)
 
@@ -219,25 +206,21 @@ In BOTH agents, assign the Service Principle permission to query the endpoint\
 
 ![](./readme_images/image27.png)
 
-### Local testing/development
+## Local testing/development
 
 1.  `cd dabs`
-
 2.  `dabs % ./dev_locally.sh`
 
-### Deploy APP only 
+## Deploy APP only 
 
 To deploy a new version of the app only, without deploying everything else:
 
 1.  `cd dabs/apps`
-
 2.  `source ../login_new_workspace.sh`
-
 3.  `databricks bundle deploy \--target dev`
-
 4.  `databricks bundle run databricks_portfolio_apps`
 
-### MISC
+## MISC
 
 Question that leverages various agents in the same question, proving multi-agentic system:\
 
