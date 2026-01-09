@@ -232,7 +232,7 @@ In BOTH agents, assign the Service Principle permission to query the endpoint\
 ## Local testing/development
 
 1.  `cd dabs`
-2.  `dabs ./dev_locally.sh`
+2.  `./dev_locally.sh`
 
 ## Deploy APP only 
 
