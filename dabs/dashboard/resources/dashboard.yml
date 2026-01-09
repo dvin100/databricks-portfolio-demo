@@ -1,0 +1,11 @@
+resources:
+    dashboards:
+      portfolio_dashboard:
+        display_name: 'Portfolio Dashboard'
+        file_path: ../fixtures/dashboard/Portfolio.lvdash.json
+        warehouse_id: ${var.sql_warehouse}
+        
+      news_dashboard:
+        display_name: 'News Dashboard'
+        file_path: ../fixtures/dashboard/News.lvdash.json
+        warehouse_id: ${var.sql_warehouse}

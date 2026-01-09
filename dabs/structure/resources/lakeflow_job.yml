@@ -1,0 +1,15 @@
+resources:
+  jobs:
+    lakeflow_job:
+      name: lakeflow_job
+
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+
+      tasks:
+        - task_key: lakeflow_job
+          notebook_task:
+            notebook_path: ../src/lakeflow_job/lakeflow_job.ipynb

@@ -1,0 +1,2 @@
+databricks auth login -p ONEENVAWS
+export DATABRICKS_CONFIG_PROFILE="ONEENVAWS"

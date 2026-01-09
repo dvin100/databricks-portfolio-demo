@@ -1,0 +1,22 @@
+resources:
+  pipelines:
+    lakeflow_pipeline:
+      name: lakeflow_pipeline
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      root_path: "../src/lakeflow_pipeline"
+      libraries:
+        - glob:
+            include: ../src/lakeflow_pipeline/**
+  
+      # Pipeline configuration
+      channel: CURRENT
+      photon: true
+      continuous: false
+      development: true
+
+      # Pipeline configuration - pass volume path as parameter
+      configuration:
+        catalog: ${var.catalog}
+        schema: ${var.schema}

@@ -1,0 +1,20 @@
+command: ["npm", "run", "start"]
+runtime: nodejs20
+
+env:
+  - name: DATABRICKS_SERVING_ENDPOINT
+    valueFrom: serving-endpoint
+
+pages:
+  - path: /
+    name: Home
+  - path: /chat
+    name: Chat
+  - path: /dashboard
+    name: Dashboard
+  - path: /news
+    name: News
+  - path: /documents
+    name: Documents
+  - path: /lakebase
+    name: Lakebase

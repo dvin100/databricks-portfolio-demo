@@ -1,0 +1,422 @@
+{
+  "datasets": [
+    {
+      "name": "db22c5f4",
+      "displayName": "portfolio_value",
+      "queryLines": [
+        "SELECT * FROM demo.portfolio.portfolio_value"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "ce921a4e",
+      "displayName": "Portfolio view",
+      "layout": [
+        {
+          "widget": {
+            "name": "total-value-per-date",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "date",
+                      "expression": "`date`"
+                    },
+                    {
+                      "name": "sum(total_value)",
+                      "expression": "SUM(`total_value`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "date",
+                  "scale": {
+                    "type": "temporal"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(total_value)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "title": "Total Value per Date",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 7
+          }
+        },
+        {
+          "widget": {
+            "name": "ticker",
+            "queries": [
+              {
+                "name": "dashboards/01f0cf9dfc8217ae816545d7230c9958/datasets/01f0cf9e1fad1f1f8831557a5a15c9d6_ticker",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "ticker",
+                      "expression": "`ticker`"
+                    },
+                    {
+                      "name": "ticker_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "ticker",
+                    "queryName": "dashboards/01f0cf9dfc8217ae816545d7230c9958/datasets/01f0cf9e1fad1f1f8831557a5a15c9d6_ticker"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Ticker"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "date-range",
+            "queries": [
+              {
+                "name": "dashboards/01f0cf9dfc8217ae816545d7230c9958/datasets/01f0cf9e1fad1f1f8831557a5a15c9d6_date",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "date",
+                      "expression": "`date`"
+                    },
+                    {
+                      "name": "date_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-date-range-picker",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "date",
+                    "queryName": "dashboards/01f0cf9dfc8217ae816545d7230c9958/datasets/01f0cf9e1fad1f1f8831557a5a15c9d6_date"
+                  }
+                ]
+              },
+              "selection": {
+                "defaultSelection": {
+                  "range": {
+                    "dataType": "DATETIME",
+                    "min": {
+                      "value": "2024-01-02T00:00:00.000"
+                    },
+                    "max": {
+                      "value": "2025-11-28T23:59:59.999"
+                    }
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Date Range"
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 1,
+            "width": 2,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-per-markey",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "sum(total_value)",
+                      "expression": "SUM(`total_value`)"
+                    },
+                    {
+                      "name": "market",
+                      "expression": "`market`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(total_value)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "by total value"
+                },
+                "color": {
+                  "fieldName": "market",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution per market"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 3,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "2f9eb34b",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "ticker",
+                      "expression": "`ticker`"
+                    },
+                    {
+                      "name": "date",
+                      "expression": "`date`"
+                    },
+                    {
+                      "name": "sum(total_value)",
+                      "expression": "SUM(`total_value`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "date",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(total_value)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "ticker",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 6,
+            "height": 9
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-per-ticker-1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "db22c5f4",
+                  "fields": [
+                    {
+                      "name": "sum(total_value)",
+                      "expression": "SUM(`total_value`)"
+                    },
+                    {
+                      "name": "ticker",
+                      "expression": "`ticker`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(total_value)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "by total value"
+                },
+                "color": {
+                  "fieldName": "ticker",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution per ticker"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 7,
+            "width": 3,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "d540cb9c",
+            "multilineTextboxSpec": {
+              "lines": [
+                "Current portfolio value\n",
+                "<p>&nbsp;</p>\n",
+                "\n",
+                "<span style=\"text-align:center;display:block;\"><span style=\"font-size: 72px;line-height: 1.5;\">$7.05M</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "8a516f1f",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "e1dc999c",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {
+        "light": "#0A0A0B",
+        "dark": "#1F272D"
+      },
+      "widgetBackgroundColor": {
+        "light": "#0A0A0B",
+        "dark": "#11171C"
+      },
+      "fontColor": {
+        "light": "#AEC2D4",
+        "dark": "#E8ECF0"
+      },
+      "selectionColor": {
+        "light": "#2272B4",
+        "dark": "#8ACAFF"
+      },
+      "widgetHeaderAlignment": "LEFT"
+    },
+    "genieSpace": {
+      "isEnabled": true,
+      "overrideId": "01f0ecb8bf9012b8b35b4728a570f8d0",
+      "enablementMode": "ENABLED"
+    },
+    "applyModeEnabled": false
+  }
+}

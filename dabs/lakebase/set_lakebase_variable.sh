@@ -1,0 +1,6 @@
+export PGAPPNAME='portfolio-chatbot-app'
+export PGDATABASE='databricks_postgres'
+export PGHOST='instance-2xxxxxxx1611736.database.cloud.databricks.com'
+export PGPORT='5432'
+export PGSSLMODE='require'
+export PGUSER='6da881xxxxxxxxx48-1609b526d9ac'
