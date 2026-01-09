@@ -41,8 +41,9 @@ It deploys the following components:
 
 ## Variables settings
 
-1.  For the workspace creation, update the variables in the terraform.tfvars file\
-    ( terraform/account/terraform.tfvars )
+1.  For the workspace creation, update the variables in the terraform.tfvars.example file\
+    ( terraform/account/terraform.tfvars.example )
+    Copy terraform.tfvars.example to terraform.tfvars and change the variables where you see update "[UPDATE]"
 
 2.  For the application, update the variables in the databricks.yml file\
     (dabs/databricks.yml)\

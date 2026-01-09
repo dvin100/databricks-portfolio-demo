@@ -1,0 +1,15 @@
+# Databricks CLI profile (configure with: databricks configure --profile DEFAULT)
+databricks_cli_profile = "ONEENVAWS"
+
+# Databricks account ID (found at https://accounts.cloud.databricks.com/)
+databricks_account_id = "[UPDATE]"
+
+# New metastore_name name
+metastore_name = "[UPDATE]-metastore-portfolio"
+
+# New workspace name
+workspace_name = "[UPDATE]-portfolio"
+
+# AWS region for the workspace
+aws_region = "us-west-2"
+
