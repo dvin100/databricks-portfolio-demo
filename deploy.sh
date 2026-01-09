@@ -49,9 +49,7 @@ echo "************************************************************"
 echo ''
 cd $HOME_DEPLOYDIR/dabs/
 source ./login_new_workspace.sh
-cd $HOME_DEPLOYDIR/dabs/lakebase/
-./setup.sh
-exit 0;
+
 echo ''
 echo "************************************************************"
 echo "Creating the SQL warehouse"
