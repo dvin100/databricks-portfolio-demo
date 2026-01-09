@@ -1,5 +1,27 @@
 # Portfolio Management app
 
+## Table of Contents
+- [Description](#description)
+- [App Screenshots](#app-screenshot)
+- [Requirements](#requirements)
+- [Variables Settings](#variables-settings)
+- [Installation](#installation)
+  - [Marketplace](#marketplace)
+  - [Create Catalog](#create-catalog)
+  - [Assign Default Catalog](#assign-default-catalog)
+  - [Genie Space Permission](#genie-space-permission)
+  - [Activate Multiple Previews](#activate-multiple-previews)
+  - [Dashboard Embedding](#dashboard-embedding)
+  - [Knowledge Assistant Creation](#knowledge-assistant-creation)
+  - [Multi-Agent Supervisor](#multi-agent-supervisor)
+  - [Apps Permissions to Agent Bricks](#apps-permissions-to-agent-bricks)
+  - [Copy Lakebase Variables](#copy-the-lakebase-variables-from-the-app)
+  - [Connect to Lakebase](#connect-to-lakebase)
+  - [Sync Lakebase Table](#to-sync-the-lakebase-table)
+- [Local Testing/Development](#local-testingdevelopment)
+- [Deploy APP Only](#deploy-app-only)
+- [MISC](#misc)
+
 ## Description
 
 The demo is an application that provides various tools for a Portfolio
@@ -64,7 +86,7 @@ below, are required.
 2.  Marketplace\
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: manually create the marketplace tables called \'news\' from the UI\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
     - In the Databricks UI, click on Marketplace
     - In the search box, type 'BBC/Google/CNN/Reuters News listing'
@@ -79,7 +101,7 @@ below, are required.
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: manually create the catalog with the same name as the\
     one have set in the databricks.yml file. (Currently a bug)\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image21.png)
 
@@ -89,7 +111,7 @@ below, are required.
 4.  Assign Default Catalog\
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: in the UI, set the workspace default catalog to the catalog you have just created\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image3.png)
 ![](./readme_images/image1.png)
@@ -106,19 +128,19 @@ below, are required.
 
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Activate the preview feature \'Mosaic AI Agent BricksPreview\' in the UI\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Activate the preview feature \'External Tool Calling for Agents\' in the UI \
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Activate both preview features \'On-Behalf-Of-User Authorization\' in the UI \
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!\-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!\-
     
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Activate the preview features \'Managed MCP Servers\' in the UI \
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image14.png)
 
@@ -127,7 +149,7 @@ below, are required.
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Grant access to allow dashboard embedding\
     (Settings/security/embed dashboard) \
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image23.png)
 
@@ -139,27 +161,27 @@ below, are required.
 
 Enter the following under Basic Info\
 **Name**: knowledge-assistant-rag\
-**Description**: RAG Chatbot for financial documentation, including 10K, 10Q and earning calls\
+**Description**: RAG Chatbot for financial documentation, including 10K, 10Q and earning calls
 
 Enter the following under Configure Knowledge Sources\
 **Source**: demo/portfolio/artifacts/pdf\
-**Describe the content**: Financial PDF documents, including 10K, 10Q and earning calls\
+**Describe the content**: Financial PDF documents, including 10K, 10Q and earning calls
 
 ![](./readme_images/image7.png)
 
-Once created, keep in mind it might take a couple of minutes to parse all documents...\
+Once created, keep in mind it might take a couple of minutes to parse all documents...
 
 
-9.  Multi-Agent Supervisor\
+9.  Multi-Agent Supervisor
 
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Create the Multi-agent Supervisor\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image17.png)
 
 **Name**: multi-agent-supervisor\
-**Description**: This Multi-Agent Supervisor answers questions on financial data. It includes Genie for structure data, RAG endpoint for PDF documents and functions to get news sentiment on various companies.\
+**Description**: This Multi-Agent Supervisor answers questions on financial data. It includes Genie for structure data, RAG endpoint for PDF documents and functions to get news sentiment on various companies.
 
 ![](./readme_images/image20.png)
 
@@ -172,7 +194,7 @@ Copy the Endpoint and paste it in the CLI
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Manually assign the app Service Principal the right to use\
     the Multi-agent Supervisor and the Knowledge Assistant Agent endpoints\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
 
 ![](./readme_images/image15.png)
 
@@ -186,7 +208,7 @@ In BOTH agents, assign the Service Principle permission to query the endpoint\
 11. Copy the lakebase variables from the APP\
     !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
     ACTION REQUIRED: Copy the lakebase variables in the file dabs/lakebase/lakebase_variable.sh\
-    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-\
+    !-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-!-
     
     ![](./readme_images/image22.png)
 
@@ -223,6 +245,6 @@ To deploy a new version of the app only, without deploying everything else:
 
 ## MISC
 
-Question that leverages various agents in the same question, proving multi-agentic system:\
+Question that leverages various agents in the same question, proving multi-agentic system:
 
 I want to know which stock I have the most and for that stock, give me the top 3 risks highlighted in the financial docs and what is the market sentiment from the news
